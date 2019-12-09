@@ -8,9 +8,6 @@ import { HttpClient } from '@angular/common/http';
 <input type="text" [(ngModel)]="searchText"/>
 <button (click)="getUserInfo()"> search User </button>
   </div>
-
-
-
   <table style="font-size:16px; border:1px solid;width:100%;">
   <tr>
    <th >User Name</th>
