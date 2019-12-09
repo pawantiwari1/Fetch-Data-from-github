@@ -8,9 +8,10 @@ import { HttpClient } from '@angular/common/http';
 <input type="text" [(ngModel)]="searchText"/>
 <button (click)="getUserInfo()"> search User </button>
   </div>
-<p>{{listofInformation.login}}</p>
 
-  <table style="font-size:16px; border:1px solid">
+
+
+  <table style="font-size:16px; border:1px solid;width:100%;">
   <tr>
    <th >User Name</th>
    <th> type</th>
@@ -29,7 +30,10 @@ import { HttpClient } from '@angular/common/http';
   <td>{{items.type}}</td>
   <td>{{items.bio}}</td>
   <td>{{items.company}}</td>
-  <td>{{items.avatar_url}}</td>
+
+  <td>
+  <img src={{items.avatar_url}} alt="Smiley face" height="42" width="42">
+  </td>
   <td> {{items.followers}}</td>
   <td> {{items.following}}</td>
 
