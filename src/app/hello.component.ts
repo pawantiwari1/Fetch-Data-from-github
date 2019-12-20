@@ -1,12 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MyserviceService} from '../myservice.service';
 @Component({
   selector: 'hello',
   template: `Enter usere name to get github info
   
   <div>
 <input type="text" [(ngModel)]="searchText"/>
-<button (click)="getUserInfo()"> search User </button>
+<button (click)="getUserData()"> search User </button>
   </div>
   <table style="font-size:16px; border:1px solid;width:100%;">
   <tr>
@@ -55,16 +56,26 @@ url="https://api.github.com/users"
   searchText:any;
   result:any=[];
  listofInformation:Array<any>=[];
-constructor(private http:HttpClient)
+ 
+constructor(private http:HttpClient,private service: MyserviceService)
 {
 }
-getUserInfo()
+getUserInfo()//same class
 {
   this.http.get(this.url+"/"+this.searchText).subscribe(data=>
   {
     this.listofInformation=  JSON.parse( "["+ JSON.stringify(data)+"]");
     console.log(data);
   })
+}
+
+getUserData()// using service
+{
+ this.service.getUserInfo(this.searchText).subscribe(data=>
+ {
+    this.listofInformation=  JSON.parse( "["+ JSON.stringify(data)+"]");
+   console.log(this.listofInformation)
+ })   
 }
 
   
