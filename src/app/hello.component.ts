@@ -78,6 +78,40 @@ getUserData()// using service
  })   
 }
 
+getArrayFunctionUseCase()
+{
+  //Includes
+const pets = [1,2,3];
+console.log("element exist or not in an array ",pets.includes(4)," from an array ",pets);
+console.log("element exist or not in an array ",pets.includes(3), " from an array ",pets);
+var testarray=[1,2,3,5];
+var spreadarray=[...testarray]//Spread array
+var maxofNumber=Math.max(...testarray)//Max number
+console.log("Max number in an array ",maxofNumber," from an array ",spreadarray);
+var arrSum = testarray => testarray.reduce((a,b) => a + b, 0)//sum of array
+console.log("Sum of array ",arrSum(spreadarray));
+//fined index and remove value based on the index
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var a = fruits.indexOf("Apple");//Index of array
+console.log("remove element with basd on the index ",fruits.splice(a,1),fruits)//remove element from an array based on index
+//The join() method returns the array as a string.
+ var fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log("joins ",fruits.join("!"))
+//The shift() method removes the first item of an array.
+ var fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log("removed value ",fruits.shift()," updated original array ",fruits);//this method will change the original array.
+//The unshift() method adds new items to the beginning of an array, and returns the new length.
+ var unshiftArray = ["Banana", "Orange", "Apple", "Mango"];
+console.log("Size chnage ", unshiftArray.unshift("Raj") ," original array " ,unshiftArray);
+//Array.from() method returns an Array object from any object with a length property or an iterable object.
+var str="rajan";
+var formArray = Array.from(str);
+console.log("form array ",formArray)//convert string to an array of character format
+//Fill all the array elements with a static value: with start index to end index  otherwise filled fullarray
+var fillArray = ["Banana", "Orange", "Apple", "Mango"];
+console.log("fillarray ", fillArray.fill("Raj",2,4))
+}
+
   
 
 
