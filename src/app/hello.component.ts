@@ -18,7 +18,6 @@ import { MyserviceService} from '../myservice.service';
    <th>image url</th>
    <th>followers </th>
    <th>Following</th>
-
   </tr>
   <thead>
   </thead>
@@ -28,13 +27,11 @@ import { MyserviceService} from '../myservice.service';
   <td>{{items.type}}</td>
   <td>{{items.bio}}</td>
   <td>{{items.company}}</td>
-
   <td>
   <img src={{items.avatar_url}} alt="Smiley face" height="42" width="42">
   </td>
   <td> {{items.followers}}</td>
   <td> {{items.following}}</td>
-
   </tr>
   </tbody>
   </table>
